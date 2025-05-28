@@ -35,12 +35,12 @@ with st.sidebar:
             "magnesium", "manganese", "omega3", "selenium", "vitamin-a", "vitamin-b12",
             "vitamin-c", "vitamin-d3", "vitamin-e", "vitamin-k", "zinc"
         ])
-        section = st.selectbox("Section", ["Biotin", "Calcium", "Choline", "Chromium", "Copper", "Folate", "Iodine", "Iron", "Magnesium", "Manganese", "Omega3", "Selenium", "Vitamin-a", "Vitamin-b12", "Vitamin-c", "Vitamin-d3", "Vitamin-e", "Vitamin-k", "Zinc"])
+        section = st.selectbox("Section", ["Micronutrients"])
     elif kb == "GeneralVDB":
         chunk_category = st.selectbox("Chunk Category", [
             "craving", "diet", "fast", "hydration", "motivation", "oil_intake"
         ])
-        section = st.selectbox("Section", ["Craving", "Plateau", "Motivation", "Fasting", "Micronutrients", "Exercise", "Hydration"])
+        section = st.selectbox("Section", ["Craving", "Plateau", "Motivation", "Fasting", "Exercise", "Hydration"])
 
     st.divider()
     st.header("User Data")
@@ -70,7 +70,7 @@ with st.sidebar:
     age = st.number_input("Age", min_value=0, max_value=120, step=1, disabled=disabled)
     community = st.text_input("State", value=community, placeholder="Community (Separate by \",\")", disabled=disabled)
     foodtype = st.multiselect("Food Type", ["Non Vegetarian", "Vegetarian", "Vegan", "Eggetarian"], default=foodtype, disabled=disabled)
-    condition = st.multiselect("Condition", ["Diabetes", "Cholesterol", "Hypertension", "Hypothyroid", "Blood Pressure", "PCOS"], default=condition, disabled=disabled)
+    condition = st.multiselect("Condition", ["Diabetes", "Cholesterol", "Hypertension", "Weighloss", "Blood Pressure", "PCOS"], default=condition, disabled=disabled)
     allergies = st.text_input("Allergies", value=allergies, placeholder="Allergies (Separate by \",\")", disabled=disabled)
     
     if st.button("Save" if not disabled else "Edit", on_click=saveFields if not disabled else editFields, icon="✔️" if not disabled else "✏️"):
