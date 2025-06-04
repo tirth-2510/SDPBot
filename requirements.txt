@@ -1,2 +1,5 @@
 streamlit
+langchain-groq
+langchain-core
+pymongo
 httpx
