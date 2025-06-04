@@ -429,7 +429,7 @@ def textualizeDocs(doc: dict):
 def generateDietPlan(user_input: str):
     aggr_query = get_mongo_query(user_input)
     aggregation_query = ast.literal_eval(aggr_query.content)
-    st.code(aggregation_query)
+    # st.code(aggregation_query)
     mongo_documents = getMongoResponse(aggregation_query)
     context = ""
     for document in mongo_documents:
